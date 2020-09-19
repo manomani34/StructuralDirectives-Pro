@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild } from '@angular/core';
 //test
 @Component({
   selector: 'app-root',
@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'StructuralDirectives-Pro';
+  absent: boolean = true; 
+  names: string []  = ['ali' , 'mohammad' , 'reza' , 'hossein'];
+  @ViewChild ('scoreValu') mytxt: ElementRef;
+  score = 0;
+  
+ 
+
+  makeDispaear(){
+  this.absent = !this.absent
+  this.score = this.mytxt.nativeElement.value;
+  }
 }
